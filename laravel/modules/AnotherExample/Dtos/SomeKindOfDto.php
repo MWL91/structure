@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Dtos;
+namespace Modules\AnotherExample\Dtos;
 
 final class SomeKindOfDto
 {

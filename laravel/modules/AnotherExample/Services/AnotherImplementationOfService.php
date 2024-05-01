@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace Modules\AnotherExample\Services;
 
 class AnotherImplementationOfService implements Contracts\AnotherExampleService
 {
-    public function doSomethingElse(\App\Dtos\SomeKindOfDto $dto): void
+    public function doSomethingElse(\Modules\AnotherExample\Dtos\SomeKindOfDto $dto): void
     {
         // Do something else with the DTO
     }

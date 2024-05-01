@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Dtos\SomeKindOfDto;
-use App\Services\Contracts\AnotherExampleService;
-use App\Services\Contracts\ExampleService;
 use Illuminate\Http\Request;
+use Modules\AnotherExample\Services\Contracts\AnotherExampleService;
+use Modules\Example\Services\Contracts\ExampleService;
 
 final class ExampleController extends Controller
 {
@@ -21,10 +20,12 @@ final class ExampleController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $dto = new SomeKindOfDto('John Doe', 30);
-
-        $this->exampleService->doSomething($dto);
-        $this->anotherExampleService->doSomethingElse($dto);
+        $this->exampleService->doSomething(
+            new \Modules\Example\Dtos\SomeKindOfDto('John Doe', 30)
+        );
+        $this->anotherExampleService->doSomethingElse(
+            new \Modules\AnotherExample\Dtos\SomeKindOfDto('John Doe', 30)
+        );
 
         return response()->json(['message' => 'Success']);
     }
