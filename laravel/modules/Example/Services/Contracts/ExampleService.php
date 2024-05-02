@@ -2,7 +2,9 @@
 
 namespace Modules\Example\Services\Contracts;
 
+use Modules\Shared\Dtos\Birthday;
+
 interface ExampleService
 {
-    public function doSomething(\Modules\Example\Dtos\SomeKindOfDto $dto): void;
+    public function doSomething(Birthday $dto): void;
 }
